@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+    
+   #rodyk {
+       
+        width: 50%;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+       #rodyk input{
+        background-color:  white;
+     color: #432815;
+     width: 200px;
+     height: 50px;
+}
+
+    div.btn {
+    display: inline-block;
+    border: 2px solid #ccc;
+    margin-right: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
+}
+div.btn.on {
+    background-color: #777;
+    color: white;
+}
+    
+    rnk{display: none;}
+    option {
+        display: block;
+    color:red;
+   background-color: #000000;
+    
+    }
+</style>
+    </head>
+<body onload="ivesti()">
+
+
+<script>
+
+    function ivesti(){
+
+
+$fn="asktantras.php";
+rg=new XMLHttpRequest();
+rg.open("GET",$fn,true);
+rg.onreadystatechange=function(){
+if(rg.readyState==4){
+var ats=rg.responseText;
+    //alert(ats)
+    
+mas=ats.split("*");
+var kiek=mas.length;
+  //    alert(kiek);
+
+
+var rn=document.getElementById("rnk");
+var kint="";
+for (var j=0; j<kiek-1;j++){
+    
+  var orn=document.createElement("option");
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "button");
+    x.onclick = function()
+            {
+               alert('Test');
+            };
+
+
+    var divas = document.createElement("P");
+    divas.appendChild(x);
+    document.getElementById("rodyk").appendChild(divas);
+      kint+="<input type='button' id='"+mas[j]+"'value='"+mas[j+1]+"' onlicl='" +fvardas()+"'><br>"  ;
+x.name=mas[j+1];
+x.value=mas[j+1];
+j++;
+rn.add(orn);
+}
+}
+}
+rg.send(null);
+}
+
+    
+
+
+</script>
+
+
+
+    <select id="rnk" onchange="istri()">
+<option value="">Pasirink firma</option>
+</select>
+
+
+    
+<div id="rodyk"></div>
+   
+   
+</body>
+</html>

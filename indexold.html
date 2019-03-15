@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+
+    .matomumas {
+    display:none ;
+    }
+    
+    h1 {
+    }
+       .mygtukoDizainas input{
+        float:;
+        background-color:  white;
+     color: #432815;
+     width: 200px;
+     height: 50px;
+}
+
+    div.btn {
+    display: inline-block;
+    border: 2px solid #ccc;
+    margin-right: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
+}
+div.btn.on {
+    background-color: #777;
+    color: white;
+}
+    
+    rnk{display: none;}
+    option {
+        display: block;
+    color:red;
+   background-color: #000000;
+    
+    }
+</style>
+    </head>
+<!--<body onload="raumenu_grupe(this)">-->
+    <body onload="ivesti()">
+
+ 
+
+<script>
+    contentType: "application/x-javascript; charset:utf-8"
+    var k = 0;
+
+    var lytisID;
+    var lytisValue;
+
+    var treniravimosiTipasID;
+    var treniravimosiTipasValue;
+
+    var sudetingumoLygisId;
+    var sudetingumoLygisValue;
+
+    var irangosTipasId;
+    var sirangosTipasValue;
+
+    var raumenuGrupeId;
+    var raumenuGrupeValue;
+
+    function ivesti() {
+        // document.getElementById('rodykLytis').getElementsByClassName("matomumas")[15].style.displayblock = 'block';//panaikin paspaudimus
+
+        var x = document.getElementsByClassName("matomumas");
+        x[k].style.display = "block";
+        k++;
+
+        $fn = "lytis.php";
+        rg = new XMLHttpRequest();
+        rg.open("GET", $fn, true);
+        rg.onreadystatechange = function () {
+            if (rg.readyState == 4) {
+                var ats = rg.responseText;
+                // alert(ats)
+
+                mas = ats.split("*");
+                var kiek = mas.length;
+                //lert(kiek);
+
+
+                for (var j = 0; j < kiek - 1; j++) {
+                    // var fvardas="kaskas()";
+                    kint = "<input type='button' id='" + mas[j] + "' class='" + 'lol' + "'value='" + mas[j + 1] + "' onclick='" + 'treniravimosiTipas(this)' + "'>";
+                    document.getElementById("rodykLytis").innerHTML += kint;
+                    j++;
+
+                }
+            }
+        }
+        rg.send(null);
+
+
+
+
+
+        //  var targetDiv = document.getElementById("rodyk").getElementsByClassName("lol")[0];
+        //targetDiv.innerHTML = "Goodbye world!";
+
+
+
+
+
+    }
+
+
+
+    function treniravimosiTipas(lyt) {
+
+        lytisId = lyt.id;
+        lytisValue = lyt.value;
+        document.getElementById("kintamieji").innerHTML += '&nbsp;' + lytisValue + '=' + lytisId;
+
+        var x = document.getElementsByClassName("matomumas");
+        x[k].style.display = "block";
+        k++;
+
+        document.getElementById('rodykLytis').style.pointerEvents = 'none'; //panaikin paspaudimus
+
+        $fn = "treniravimosiTipas.php";
+        rg = new XMLHttpRequest();
+        rg.open("GET", $fn, true);
+        rg.onreadystatechange = function () {
+            if (rg.readyState == 4) {
+                var ats = rg.responseText;
+                // alert(ats)
+
+                mas = ats.split("*");
+                var kiek = mas.length;
+                //lert(kiek);
+
+
+                for (var j = 0; j < kiek - 1; j++) {
+                    // var fvardas="kaskas()";
+                    kint = "<input type='button' id='" + mas[j] + "'value='" + mas[j + 1] + "' onclick='" + 'sudetingumo_lygis(this)' + "'>";
+                    document.getElementById("rodykTrTipas").innerHTML += kint;
+                    j++;
+
+                }
+            }
+        }
+        rg.send(null);
+    }
+
+
+
+    function sudetingumo_lygis(trT) {
+        treniravimosiTipasId = trT.id;
+        treniravimosiTipasValue = trT.value;
+        document.getElementById("kintamieji").innerHTML += ',&nbsp;' + treniravimosiTipasValue + '=' + treniravimosiTipasId;
+
+        var x = document.getElementsByClassName("matomumas");
+        x[k].style.display = "block";
+        k++;
+
+        document.getElementById('rodykTrTipas').style.pointerEvents = 'none'; //panaikin paspaudimus
+        $fn = "sudetingumoLygiai.php";
+
+        rg = new XMLHttpRequest();
+        rg.open("GET", $fn, true);
+        rg.onreadystatechange = function () {
+            if (rg.readyState == 4) {
+                var ats = rg.responseText;
+                //alert(ats)
+
+                mas = ats.split("*");
+                var kiek = mas.length;
+                //lert(kiek);
+
+
+                for (var j = 0; j < kiek - 1; j++) {
+                    // var fvardas="kaskas()";
+                    kint = "<input type='button' id='" + mas[j] + "'value='" + mas[j + 1] + "' onclick='" + 'irangos_tipas(this)' + "'>";
+                    document.getElementById("rodykSudetingumas").innerHTML += kint;
+                    j++;
+
+                }
+            }
+        }
+        rg.send(null);
+
+
+    }
+
+
+    function irangos_tipas(sud) {
+        sudetingumoLygisId = sud.id;
+        sudetingumoLygisValue = sud.value;
+        document.getElementById("kintamieji").innerHTML += ',&nbsp;' + sudetingumoLygisValue + '=' + sudetingumoLygisId;
+
+        var x = document.getElementsByClassName("matomumas");
+        x[k].style.display = "block";
+        k++;
+
+        document.getElementById('rodykSudetingumas').style.pointerEvents = 'none'; //panaikin paspaudimus
+        $fn = "irangosTipas.php";
+        rg = new XMLHttpRequest();
+        rg.open("GET", $fn, true);
+        rg.onreadystatechange = function () {
+            if (rg.readyState == 4) {
+                var ats = rg.responseText;
+                //alert(ats)
+
+                mas = ats.split("*");
+                var kiek = mas.length;
+                //lert(kiek);
+
+
+                for (var j = 0; j < kiek - 1; j++) {
+                    // var fvardas="kaskas()";
+                    kint = "<input type='button' id='" + mas[j] + "'value='" + mas[j + 1] + "' onclick='" + 'raumenu_grupe(this)' + "'>";
+                    document.getElementById("rodykIranga").innerHTML += kint;
+                    j++;
+
+                }
+            }
+        }
+        rg.send(null);
+
+
+    }
+
+
+    function raumenu_grupe(irT) {
+        irangosTipasId = irT.id;
+        irangosTipasValue = irT.value;
+        document.getElementById("kintamieji").innerHTML += ',&nbsp;' + irangosTipasValue + '=' + irangosTipasId;
+
+        var x = document.getElementsByClassName("matomumas");
+        x[k].style.display = "block";
+        k++;
+
+        document.getElementById('rodykIranga').style.pointerEvents = 'none'; //panaikin paspaudimus
+        $fn = "raumenuTipas.php";
+        rg = new XMLHttpRequest();
+        rg.open("GET", $fn, true);
+        rg.onreadystatechange = function () {
+            if (rg.readyState == 4) {
+                var ats = rg.responseText;
+                //alert(ats)
+
+                mas = ats.split("*");
+                var kiek = mas.length;
+                //lert(kiek);
+
+
+                for (var j = 0; j < kiek - 1; j++) {
+                    //var fvardas="kaskas()";
+                    kint = "<input type='button' id='" + mas[j] + "'value='" + mas[j + 1] + "' onclick='" + 'kintamieji(this)' + "'>";
+                    document.getElementById("rodykRaumenys").innerHTML += kint;
+                    j++;
+
+                }
+            }
+        }
+        rg.send(null);
+
+
+    }
+
+    function kintamieji(rm) {
+
+        var x = document.getElementsByClassName("matomumas");
+        x[k].style.display = "block";
+        k++;
+
+        document.getElementById('rodykRaumenys').style.pointerEvents = 'none'; //panaikin paspaudimus
+        document.getElementById('klausimai').style.display = 'none';
+        raumenuGrupeId = rmG.id;
+        raumenuGrupeValue = rmG.value;
+        document.getElementById("kintamieji").innerHTML += ',&nbsp;' + raumenuGrupeValue + '=' + raumenuGrupeId;
+
+        document.getElementById("raodykRaumenysPaciauPav").innerHTML += '&nbsp;' + raumenuGrupeValue;
+
+        $fn = "raumenGrupes.php?raumGrId=" + raumenuGrupeId;
+        rg = new XMLHttpRequest();
+        rg.open("GET", $fn, true);
+        rg.onreadystatechange = function () {
+            if (rg.readyState == 4) {
+                var ats = rg.responseText;
+                //alert(ats)
+
+                mas = ats.split("*");
+                var kiek = mas.length;
+                //lert(kiek);
+
+
+                for (var j = 0; j < kiek - 1; j++) {
+                    //var fvardas="kaskas()";
+                    //kintImage="<img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px;">
+
+                    kint = "<img src='" + mas[j] + "' id='" + mas[j + 1] + "'alt='" + mas[j + 2] + "'>";
+                    kint += mas[j + 3];
+                    //  kint = "<img src='" + mas[j + 1] + "' id='" + mas[j] + "'alt='" +'raumuo' + " onclick='" + 'kintamieji(this)' + "'>";
+                    // alert(mas[j])
+                    // alert(mas[j+1])
+                    //alert(mas[j+2])
+                    document.getElementById("raodykRaumenysPaciau").innerHTML += kint;
+                    j = j + 3;
+
+                }
+            }
+        }
+        rg.send(null);
+
+
+    }
+
+
+    function kintamieji(rmG) {
+
+
+
+        document.getElementById('rodykRaumenys').style.pointerEvents = 'none'; //panaikin paspaudimus
+
+        raumenuGrupeId = rmG.id;
+        raumenuGrupeValue = rmG.value;
+
+
+        window.location.href = "raumenuGrupesP.php?w1=" + raumenuGrupeId + "&w2=" + raumenuGrupeValue;
+
+        document.getElementById("kintamieji").innerHTML += ',&nbsp;' + raumenuGrupeValue + '=' + raumenuGrupeId;
+
+        document.getElementById("raodykRaumenysPaciauPav").innerHTML += '&nbsp;' + raumenuGrupeValue;
+
+
+
+
+
+
+        $fn = "raumenGrupes.php?raumGrId=" + raumenuGrupeId;
+        rg = new XMLHttpRequest();
+        rg.open("GET", $fn, true);
+        rg.onreadystatechange = function () {
+            if (rg.readyState == 4) {
+                var ats = rg.responseText;
+                //alert(ats)
+
+                mas = ats.split("*");
+                var kiek = mas.length;
+                //lert(kiek);
+                var j = 0;
+
+                for (var j = 0; j < kiek - 1; j++) {
+                    //var fvardas="kaskas()";
+                    //kintImage="<img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px;">
+
+                    kint = "<img src='" + mas[j] + "' id='" + mas[j + 1] + "'alt='" + mas[j + 2] + "'>";
+                    kint += mas[j + 3];
+                    //  kint = "<img src='" + mas[j + 1] + "' id='" + mas[j] + "'alt='" +'raumuo' + " onclick='" + 'kintamieji(this)' + "'>";
+                    // alert(mas[j])
+                    // alert(mas[j+1])
+                    //alert(mas[j+2])
+                    document.getElementById("raodykRaumenysPaciau").innerHTML += kint;
+                              document.getElementById("raodykRaumenysPaciau2").innerHTML += kint;
+                    j = j + 3;
+
+                }
+            }
+        }
+        rg.send(null);
+
+
+    }
+
+
+
+
+    /*function kaskas() {
+    document.getElementById("demo").innerHTML = "Hello World";
+    }*/
+
+</script>
+
+
+
+    
+
+       <div id="kintamieji"></div>
+    <div id="klausimai">
+   <div id="rodykLytis" class="mygtukoDizainas">
+       <h1 class="matomumas">Pasirink lyti</h1>
+        <div class="lol" class="mygtukoDizainas"></div>
+   </div>
+       <br>
+   <div id="rodykTrTipas" class="mygtukoDizainas">
+   <h1 class="matomumas">Treniravimosi tipa</h1>
+   </div>
+       <br>
+   <div id="rodykSudetingumas" class="mygtukoDizainas">
+   <h1 class="matomumas">Sudetingumo lygis</h1>
+   </div>
+       <br>
+   <div id="rodykIranga" class="mygtukoDizainas">
+   <h1 class="matomumas">Irangos tipa</h1>
+   </div>
+        <br>
+   <div id="rodykRaumenys" class="mygtukoDizainas">
+   <h1 class="matomumas">Raumenu grupe</h1>
+   </div>
+    
+    </div>
+
+    <div id="raodykRaumenysPaciau">
+    <h1 id="raodykRaumenysPaciauPav"></h1>
+    </div>
+     <p id="demo"></p>
+</body>
+</html>

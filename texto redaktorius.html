@@ -1,0 +1,99 @@
+<!---<!DOCTYPE html>
+<html>
+       
+<script src="//cdn.ckeditor.com/4.5.11/basic/ckeditor.js"></script>
+<body>
+
+<form>
+   <input type="image" name="meska" id="1"value="1" src="https://www.nasa.gov/sites/default/files/styles/image_card_4x3_ratio/public/thumbnails/image/leisa_christmas_false_color.png?itok=Jxf0IlS4.gif"><br>
+
+  <input type="submit" value="Submit">
+</form>
+ <form action="welcome.php" method="post">
+        <textarea id="myInput" name="editor1"></textarea><br>
+     
+          <input type="submit" value="Submit" onclick="myFunction()">
+</form>
+
+
+
+        <script>
+            CKEDITOR.replace( 'editor1' );
+        </script>
+  
+
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    alert(hello)
+
+}
+</script>
+
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+       
+
+<body>
+    <script src="//cdn.ckeditor.com/4.5.11/basic/ckeditor.js"></script>
+<form>
+   <input type="image" name="meska" id="1"value="1" src="https://www.nasa.gov/sites/default/files/styles/image_card_4x3_ratio/public/thumbnails/image/leisa_christmas_false_color.png?itok=Jxf0IlS4.gif"><br>
+
+  <input type="submit" value="Submit">
+</form>
+ <form>
+        <textarea id="myInput" name="editor1"></textarea><br>
+     
+          <input type="submit" value="Submit" >
+</form>
+
+
+
+        <script>
+            CKEDITOR.replace('editor1');
+           
+        </script>
+  
+
+    <div id="trackingDiv" ></div>
+<p id="demo"></p>
+
+<script>
+    function istri() {
+
+  
+        alert(editorText)
+
+
+        alert(frm)
+        $fn = "askt.php?pfr=" + frm;
+        rg = new XMLHttpRequest();
+        rg.open("GET", $fn, true);
+        rg.onreadystatechange = function () {
+            if (rg.readyState == 4) {
+                var ats = rg.responseText;
+                alert(ats);
+                mas = ats.split("*");
+                var kiek = mas.length;
+                //    alert(kiek);
+                var rn = document.getElementById("ist");
+                for (var j = 0; j < kiek - 1; j++) {
+
+                    var orn = document.createElement("option");
+                    orn.text = mas[j + 1];
+                    orn.value = mas[j];
+                    j++;
+                    rn.add(orn);
+                }
+            }
+        }
+        rg.send(null);
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,492 @@
+
+
+*{margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+ font-family: "Segoe Print", Georgia, Serif;
+ padding-bottom: 10px;
+	   text-align: center;
+  }
+
+body p,li{
+width: 78%;
+margin: 0 auto;
+   font-weight: bold;
+   padding: 0px;
+}
+htlm{
+	width:100%;
+}
+
+
+
+.ikona{
+
+position:absolute;
+right: 8%;
+top: 16%;
+width: 50px;
+z-index: +10;
+}
+
+.mygIkonas{
+    margin: 0 auto;
+width: 400px;
+    position: relative;
+}
+/*
+.mygtukoDizainas{
+   
+        text-align: center;
+    margin: 0 auto;
+ 
+   display: block;
+   
+    
+}
+
+.mygtukoDizainas input{
+    
+    clear: both;
+    text-align: center;
+    margin: 0 auto;
+           display: inline-block;
+        font-size: 120%;
+        background-color:  orange;
+     color: white;
+     width:230px;
+     height: 50px;
+     border: solid white;
+     border-radius: 4%;
+   
+}
+   .mygtukoDizainas input:hover { 
+    background-color: green;
+      transition: all .3s ease-in-out;   
+    transform: scale(1.01);
+    color:white;
+    border: none;
+    
+}
+
+    */
+
+
+
+
+#keistMyg input{
+    font-weight: bold;
+     font-size: 170%;
+      background-color:#FF9933;
+    border-radius: 4%;
+    min-width: 400px;
+    margin: 0;
+   padding: 0px;
+   padding: 20px;
+   color: white
+}
+
+.keistMyg input{
+    font-weight: bold;
+     font-size: 170%;
+      background-color:#FF9933;
+    border-radius: 4%;
+    min-width: 400px;
+    margin: 7px;;
+  
+   padding: 20px;
+   color: white
+}
+
+.MygPad{
+    font-size: 150%;
+    padding: 10px;
+}
+.pas{
+    font-size: 100%;
+    padding: 15px;
+}
+#forma{
+   
+    width: 95%;
+    margin: 0 auto;
+  
+}
+a {text-decoration: none}
+#kintamieji{
+    display: none;
+}
+#rodykRaumenys input{
+    color: white;
+     font-weight: bold;
+    font-size: 190%;
+    width: 33.3%;
+
+    margin: 0 auto;
+       background-color:rgba(255, 153, 51, 0.0);
+    border: none;
+}
+header {
+    padding-top: 18px;
+   display: block;
+	width:100%;
+	min-height:98px;
+	background-color:#339999;
+font-size:25px;	
+ font-family: "Segoe Print", Georgia, Serif;
+ color:white;
+ text-align:center;
+
+}
+#keistiGrupe {
+     width: 100%;
+  
+
+}
+
+
+#keisti{
+       padding: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 180%;
+   
+    width: 100%;
+    background-color: rgba(255, 153, 51, 0.82);
+    border:none;
+    
+}
+
+#rodykRaumenys.numeris2 {
+    display: none;
+width: 100%;
+    background-color: rgba(255, 153, 51, 0.82);
+
+}
+#grupesPav{
+    font-size: 250%;
+    padding: 20px;
+}
+#rodykRaumenys
+{
+
+}
+#pavadinimas{
+     display:block;
+
+}
+#logo{
+	
+width:115px;
+    margin: 2px 0 10px 10px;
+}
+
+#jusutrenke{
+    line-height: 55px;
+	   display: inline-block;
+	 text-align:center;
+	width:100%;
+padding:25px;
+	background-color:rgba(51, 153, 153, 0.75);
+ 
+font-size:45px;	
+ color:white;
+}
+
+
+
+table, th, td {
+ 
+}
+
+
+table{
+  
+      text-align:center;
+		width:100%;
+        color:white;
+        border-collapse: collapse;
+        
+}
+
+#trenkePav th{ 
+    border: 1.5px  solid white;
+        color: White;
+    font-size:24px;	
+     font-weight: bold;
+     
+}
+
+#sekundes{
+    font-size: 70%;
+  
+}
+#trenkeTable tr:nth-child(even) {background-color: rgba(51, 153, 153, 0.80)}
+#apsilimasTable tr:nth-child(even) {background-color: rgba(255, 153, 51,0.80)}
+tr{
+
+		background-color:#339999;
+}
+th{
+       
+       
+        padding:6px; 
+}
+
+
+ #irangosNr {
+   border-left: 1.5px  solid white;
+      border-right: 1.5px  solid white;
+
+	width:5%;
+	
+}
+
+ #pavadinimasTh{
+	width:80%;
+	
+}
+#kartai{
+	width:10%;
+       border-left: 1.5px  solid white;
+      border-right: 1.5px  solid white;
+}
+    .apsilimas tr{
+
+	background-color: rgb(255, 153, 51)
+}
+
+
+        
+td:hover
+{
+
+cursor:pointer;
+}
+
+#pratPva{
+  
+    padding: 6px;
+    color: white;
+    background-color: rgba(255, 153, 51, 0.82);
+}
+#konteineris{
+
+    text-align: center;
+    
+}
+
+#konteineris img{
+    width: 100%;
+}
+
+
+
+#irImg{
+    padding: 0;
+   margin-bottom: -9px;
+     z-index: -2;
+    position: relative;
+       
+}
+
+#juostaPas{
+    width: 100%;
+   color: white;
+    display: inline-block;
+    background-color:#339999;
+    position: relative;
+   z-index: -1;
+}
+
+#apiet{
+    
+     background-color:red;
+    	background-color:inherit;
+    width: 35%;
+    padding: 23px;
+       line-height: 30px;
+    display: block;
+    float:left;
+   
+}
+
+#apieP{
+    background-color:inherit;
+    width: 35%;
+    padding: 23px;
+       line-height: 30px;
+    display: block;
+    float:right;
+
+    
+ 
+}
+
+#pratIrNr {
+    
+    margin: 0 auto;
+    border: 18px solid #339999;
+    width: 240px;;
+    height: 240px;
+    border-radius: 50%;
+    font-size: 90px;
+    color: #808080;
+    line-height: 190px;
+    background: white;
+   text-align: center;
+   margin-top: -180px;
+   z-index: 255;
+}
+
+.pabraukt {
+
+ text-decoration: underline;
+}
+
+#info {
+      padding: 25px;
+      padding-bottom:50px; 
+}
+#adiv{
+    display: none;
+}
+.juostos{
+    
+    margin-top: -8px;
+    padding: 0px;
+    color: white;
+  background-color:inherit;   
+      background-color:#339999;
+}
+
+iframe {
+width: 100%;
+padding: 0px;
+}
+#atlikimasPav {
+    font-size: 50px;
+padding:20px;
+
+}
+
+#atlikimas {
+    margin: 0 auto;
+    width: 90%;
+    font-size: 15pt;
+padding: 50px;
+font-weight: bold;
+
+}
+
+ img{
+ 
+    width: 100%;
+
+
+}
+
+.soloRaumPav {
+    
+    padding: 10px;
+      background-color:#339999;
+      color: white;
+}
+@media  (max-width: 319px) {
+	html{
+		min-width:319px;
+	}
+	    #logo {
+    margin-top: 10px;
+    width: 70px;
+    }
+	 header {
+    padding-top: 18px;
+ 
+	min-width:219px;
+	height:30px;
+	background-color:#339999;
+font-size:12px;	
+ font-family:"Segoe Print", Georgia, Serif;
+ color:white;
+ text-align:center;
+
+}
+.mygIkonas{
+    margin: 0 auto;
+    max-width: 250px;
+}
+
+.keistMyg input{
+ font-size:180%;	
+
+    margin: 3px auto;
+       min-width: 100%;
+       max-width: 100%;
+       
+  border-radius: 20px 20px 20px 20px;
+  border-color:#FF9933;
+}
+
+.ikona{
+
+position:absolute;
+right: 8%;
+top: 20%;
+width: 35px;
+z-index: +10;
+}
+}
+@media (min-width: 320px) and (max-width: 600px) {
+    #logo {
+    margin-top: 10px;
+    width: 80px;
+    }
+
+   header {
+    padding-top: 18px;
+   display: block;
+	width:100%;
+	height:90px;
+	background-color:#339999;
+font-size:14px;	
+ font-family:"Segoe Print", Georgia, Serif;
+ color:white;
+ text-align:center;
+
+}
+
+
+.mygIkonas{
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.keistMyg input{
+ font-size:180%;	
+
+    margin: 3px auto;
+       min-width: 100%;
+       max-width: 100%;
+       
+  border-radius: 20px 20px 20px 20px;
+  border-color:#FF9933;
+}
+
+.ikona{
+
+position:absolute;
+right: 8%;
+top: 20%;
+width: 35px;
+z-index: +10;
+}
+
+
+    h1.matomumas {
+padding-bottom: 20px;    
+}
+  }
+
+
+
